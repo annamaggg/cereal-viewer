@@ -39,7 +39,7 @@ export default function App() {
       <DonutCerealGroup />
       <CerealBox texture={texture} displacementMap={displacementMap} boxColour={boxColour} />
 
-      <ambientLight intensity={0.2} /> 
+      <ambientLight intensity={0.6} /> 
       <directionalLight position={[-5, 5, 5]} intensity={0.2} color="blue" castShadow />
       <directionalLight position={[5, -5, 5]} intensity={0.2} color="red" />
       <directionalLight position={[2, 5, 3]} intensity={4} />
