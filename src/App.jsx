@@ -42,10 +42,28 @@ function PlaneWithTexture({ textureUrl, depthMapUrl }) {
   const displacementMap = useLoader(TextureLoader, depthMapUrl)
 
   return (
+    <group>
     <mesh ref={meshRef} castShadow={true} receiveShadow={true} position={[0, 0.6, 1.1]}>
-      <planeGeometry args={[5, 7, 300, 300]} />
+      <planeGeometry args={[5, 6.8, 300, 300]} />
       <meshStandardMaterial ref={materialRef}  wireframe={false} map={texture} displacementMap={displacementMap} displacementScale={0.5} roughness={0.1}  />
     </mesh>
+      <mesh position={[-2.6, 0.55, 1.3]} castShadow receiveShadow>
+        <boxGeometry args={[0.2, 7, 0.5]} />
+        <meshStandardMaterial color="black" />
+      </mesh>
+      <mesh position={[0, 4, 1.3]} castShadow receiveShadow>
+        <boxGeometry args={[5.4, 0.2, 0.5]} />
+        <meshStandardMaterial color="black" />
+      </mesh>
+      <mesh position={[2.6, 0.55, 1.3]} castShadow receiveShadow>
+        <boxGeometry args={[0.2, 7, 0.5]} />
+        <meshStandardMaterial color="black" />
+      </mesh>
+      <mesh position={[0, -2.9, 1.3]} castShadow receiveShadow>
+        <boxGeometry args={[5.4, 0.2, 0.5]} />
+        <meshStandardMaterial color="black" />
+      </mesh>
+    </group>
   );
 }
 
