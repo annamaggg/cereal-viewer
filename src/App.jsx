@@ -1,6 +1,6 @@
 import React, { StrictMode, useRef, Suspense, useState} from 'react'
 import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, useFBX } from "@react-three/drei";
 import { TextureLoader } from 'three'
 import Form from './components/Form';
 
@@ -28,6 +28,7 @@ export default function App() {
       <directionalLight position={[5, -5, 5]} intensity={0.2} color="red" />
       <directionalLight position={[2, 5, 3]} intensity={4} />
       <PlaneWithTexture textureUrl={textureUrl} depthMapUrl={depthMapUrl} />
+      <CerealBox />
     </Canvas>
     </>
   );
@@ -41,9 +42,15 @@ function PlaneWithTexture({ textureUrl, depthMapUrl }) {
   const displacementMap = useLoader(TextureLoader, depthMapUrl)
 
   return (
-    <mesh ref={meshRef} castShadow={true} receiveShadow={true}>
-      <planeGeometry args={[5, 5, 300, 300]} />
+    <mesh ref={meshRef} castShadow={true} receiveShadow={true} position={[0, 0.6, 1.1]}>
+      <planeGeometry args={[5, 7, 300, 300]} />
       <meshStandardMaterial ref={materialRef}  wireframe={false} map={texture} displacementMap={displacementMap} displacementScale={0.5} roughness={0.1}  />
     </mesh>
   );
 }
+
+const CerealBox = () => {
+  const fbx = useFBX("/models/cereal-box.fbx");
+
+  return <primitive object={fbx} scale={0.035} position={[0, -3, 0]}></primitive>;
+};
