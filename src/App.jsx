@@ -4,6 +4,7 @@ import { OrbitControls, useFBX } from "@react-three/drei";
 import { TextureLoader } from 'three'
 import Form from './components/Form';
 import * as THREE from "three";
+import DonutCerealGroup from './components/DonutCerealGroup';
 
 export default function App() {
   const [textureUrl, setTextureUrl] = useState('/images/sample-image.png');
@@ -25,6 +26,7 @@ export default function App() {
     <Canvas camera={{ position: [0, 0, 7] }} style={{ width: '100vw', height: '100vh' }} >
       <OrbitControls /> 
       <Background />
+      <DonutCerealGroup  />
       <ambientLight intensity={0.2} /> 
       <directionalLight position={[-5, 5, 5]} intensity={0.2} color="blue" castShadow />
       <directionalLight position={[5, -5, 5]} intensity={0.2} color="red" />
