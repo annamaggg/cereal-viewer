@@ -33,7 +33,7 @@ export default function App() {
   return (
     <>
     <Form onTextureFileUpload={handleTextureFileUpload} onDepthMapFileUpload={handleDepthMapFileUpload} onBoxColourChange={handleBoxColourChange} />
-    <Canvas camera={{ position: [0, 0, 7] }} style={{ width: '100vw', height: '100vh' }} >
+    <Canvas camera={{ position: [0, 0, 13] }} style={{ width: '100vw', height: '100vh' }} >
       <OrbitControls /> 
       <Background />
       <DonutCerealGroup />
