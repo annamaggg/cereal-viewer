@@ -11,7 +11,7 @@ import Background from './components/Background';
 export default function App() {
   const [textureUrl, setTextureUrl] = useState('/images/sample-image.png');
   const [depthMapUrl, setDepthMapUrl] = useState('/images/sample-map.webp');
-  const [boxColour, setBoxColour] = useState('#ffff');
+  const [boxColour, setBoxColour] = useState('#efccbb');
 
   const handleTextureFileUpload = (uploadedFile) => {
     const objectUrl = URL.createObjectURL(uploadedFile);
