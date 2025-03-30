@@ -15,32 +15,19 @@ export default function Form({onTextureFileUpload, onDepthMapFileUpload, onBoxCo
   }
 
   return (
-    <div style={{
-      backgroundColor: 'black',
-      padding: '15px',
-      borderRadius: '8px',
-      position: 'absolute',
-      margin: '20px',
-      zIndex: 10,
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '15px'
-    }}>
-      <div>
-        Texture
+    <div className='form' >
+      <div className='form--section'>
+        <h3 className='form--section-header'>Texture</h3>
         <FileUpload onFileUpload={onTextureFileUpload} />
       </div>
-      <div>
-        Depth Map
+      <div className='form--section'>
+        <h3 className='form--section-header'>Depth Map</h3>
         <FileUpload onFileUpload={onDepthMapFileUpload} />
       </div>    
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column'
-      }}>
-        Box Colour
-        <input type="text" value={boxColour} onChange={handleBoxColourChange} placeholder="e.g. #47a5c1" />
-        <button onClick={handleSetColour}> Set colour </button>
+      <div className='form--section'>
+        <h3 className='form--section-header'>Box Colour</h3>
+        <input className='form--input' type="text" value={boxColour} onChange={handleBoxColourChange} placeholder="e.g. #47a5c1" />
+        <button className='form--button' onClick={handleSetColour}> Set colour </button>
       </div>    
     </div>
   );

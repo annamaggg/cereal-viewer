@@ -15,13 +15,10 @@ export default function DonutCereal({position}) {
     }
   })
 
-
   return (
-
     <mesh ref={meshRef} castShadow={true} receiveShadow={true} position={position}>
       <torusGeometry args={[0.2, 0.13, 16, 100]} />
       <meshStandardMaterial color={'salmon'}  />
     </mesh>
-
   );
 }
